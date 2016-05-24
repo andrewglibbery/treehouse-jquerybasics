@@ -1,4 +1,5 @@
-// hide 
-$(".warning").hide();
-// show
-$(".warning").show("slow");
+function myCode() {
+$(".warning").hide().show("slow");
+}
+
+myCode();
