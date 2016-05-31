@@ -6,6 +6,7 @@
 
 body {
   background: #fff;
+  text-align: center;
 }
 
 #menu {
@@ -48,28 +49,32 @@ select {
 
 
 }
+
 h1 {
   margin: 40px 0 10px;
-  text-align: center;
-  color: #384047;
+  text-align: right;
+  color: purple;
+  
 }
+
 p {
   text-align: center;
   color: #777;
 }
 
-@media (min-width: 320px) and (max-width: 568px) {
-  #menu ul {
+@media (min-width: 320px) and (max-width: 570px) {
+    #menu ul {
+      display: none;
+    }
+}
+
+@media (min-width: 570px) {
+  #menu select, #menu button {
     display: none;
   }
 }
 
-@media (min-width: 568px) {
-  #menu select, #menu button {
-    display: none; 
-}
 
-}
 
 
 
