@@ -1,15 +1,36 @@
-//prevent spoiler from being seen
-//Solution: hide spoiler
-//Solution: Reveal through user interaction
+//Problem- when clicking on image, goes to dead end
+//Solution: create an overlay with large image - lightbox
 
-//1. hide spoiler
-$(".spoiler span").hide();
-//2. add a button
-$(".spoiler").append("<button>Reveal Spoiler</button>");
-//3. When button is pressed
-	//3.1 show spoiler
-	$("button").click(function() {
-		$(".spoiler span").show();
-		$(this).remove();
-	});
-	//3.2 get rid of button
+//2. Add overlay
+var $overlay = $('<div id="overlay"></div>');
+var $image = $('<img>');
+
+
+$overlay.append($image);
+
+
+$("body").append($overlay);
+	//2.1 An Image
+	//2.2 A Caption
+
+
+//1. Capture the click event on a link to an image
+$("#imageGallery a").click(function( event) {
+	event.preventDefault();
+	
+	var imageLocation = $(this).attr("href");
+	$image.attr("src", imageLocation);
+
+
+	$overlay.show();
+
+});
+	//1.1 show the overlay
+	//1.2 Update overlay with the image in the link
+	//1.3 Get child's alt attribute and set caption
+
+//3. When overlay is clicked
+	//3.1 hide overlay
+$overlay.click(function() {
+	$overlay.hide();
+});
